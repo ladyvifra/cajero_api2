@@ -20,12 +20,12 @@ api = FastAPI()  # Crear la aplicación
 ###############################################
 from fastapi.middleware.cors import CORSMiddleware  #Validar los orígenes para verificar que se puedne comunicar
 
-#Se escriben los hosts qeu va a acpetar
+#Se escriben los hosts que se van a aceptar
 origins = [
     "http://localhost.tiangolo.com", "https://localhost.tiangolo.com","http://127.0.0.1:8000",
-    "http://localhost", "http://localhost:8080","https://cajero-app666.herokuapp.com/"
+    "http://localhost", "https://cajero-app666.herokuapp.com", "http://localhost:8080",
 ]
-api.add_middleware( #añade los arígenes a la api para permitir que desd eotras direcciones se puedan hacer peticiones.
+api.add_middleware( #añade los orígenes a la api para permitir que desde otras direcciones se puedan hacer peticiones.
     CORSMiddleware, allow_origins=origins,
     allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
 )
