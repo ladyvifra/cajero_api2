@@ -23,7 +23,7 @@ from fastapi.middleware.cors import CORSMiddleware  #Validar los orígenes para 
 #Se escriben los hosts qeu va a acpetar
 origins = [
     "http://localhost.tiangolo.com", "https://localhost.tiangolo.com","http://127.0.0.1:8000",
-    "http://localhost", "http://localhost:8080",
+    "http://localhost", "http://localhost:8080","https://cajero-app66.herokuapp.com"
 ]
 api.add_middleware( #añade los arígenes a la api para permitir que desd eotras direcciones se puedan hacer peticiones.
     CORSMiddleware, allow_origins=origins,
