@@ -12,17 +12,20 @@ from models.transaction_models import TransactionIn,TransactionOut
 import datetime
 from fastapi import FastAPI
 from fastapi import HTTPException
+
+
 api = FastAPI()  # Crear la aplicación 
 
 
 ###############################################
 from fastapi.middleware.cors import CORSMiddleware  #Validar los orígenes para verificar que se puedne comunicar
 
+#Se escriben los hosts qeu va a acpetar
 origins = [
-    "http://localhost.tiangolo.com", "https://localhost.tiangolo.com",
+    "http://localhost.tiangolo.com", "https://localhost.tiangolo.com","http://127.0.0.1:8000",
     "http://localhost", "http://localhost:8080",
 ]
-api.add_middleware(
+api.add_middleware( #añade los arígenes a la api para permitir que desd eotras direcciones se puedan hacer peticiones.
     CORSMiddleware, allow_origins=origins,
     allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
 )
